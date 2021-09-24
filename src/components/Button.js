@@ -1,5 +1,5 @@
-export const Button = ({children}) => {
+export const Button = ({children, type}) => {
     return(
-        <button>{children}</button>
+        <button type={type}>{children}</button>
     );
 };

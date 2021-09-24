@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
 export const PrimaryOneLessonPage = () => {
-    const [ assessmentScore, setAssessmentScore ] = useState(0);
-    const [lesson, setLesson ] = useState([
+
+    const lesson = [
         {
             id: 1,
             topic: "",
@@ -35,7 +35,9 @@ export const PrimaryOneLessonPage = () => {
                 answer: "c"
             }
         }
-    ])
+    ]
+
+    const [ assessmentScore, setAssessmentScore ] = useState(0);
 
     return(
         <div></div>

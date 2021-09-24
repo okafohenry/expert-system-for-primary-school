@@ -1,13 +1,21 @@
 import React from 'react';
-import { PrimaryOneTestPage, PrimaryTwoTestPage, PrimaryThreeTestPage,LandingPage } from './pages';
+import { Route, Switch } from 'react-router';
+import { PrimaryOneTestPage, 
+        PrimaryTwoTestPage, 
+        PrimaryThreeTestPage,
+        LandingPage,
+      PrimaryOneLessonPage } from './pages';
 
 const Mathutor = () => {  
     return (
       <div>
-        <LandingPage />
-        <PrimaryOneTestPage />
-        <PrimaryTwoTestPage />
-        <PrimaryThreeTestPage />
+        <Switch>
+          <Route path='/' exact component={LandingPage}  />
+          <Route path='/tests/primary-one' component={PrimaryOneTestPage} />
+          <Route path='/tests/primary-two' component={PrimaryTwoTestPage} />
+          <Route path='/tests/primary-three' component={PrimaryThreeTestPage} />
+          <Route path="/lessons/primary-one" component={PrimaryOneLessonPage} />
+        </Switch>
       </div>
     );
 }

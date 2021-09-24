@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Mathutor from './App';
 import './assets/css/globalStyle.css';
+import { BrowserRouter } from 'react-router-dom';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Mathutor />
+    <BrowserRouter>
+      <Mathutor />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
