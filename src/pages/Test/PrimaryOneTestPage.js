@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { TestQuestionOptions, TestQuestions, Button } from "../../components";
 import { Link } from "react-router-dom";
 
@@ -36,19 +36,30 @@ const testQuestions = [
 ];
 
 export const PrimaryOneTestPage = () => { 
-    const [testScore, setTestScore] = useState(0);
-    const [selectedOption, setSelectedOption] = useState("");
+
+    const [testScore, setTestScore] = useState(0);    
+    const [selectedOption, setSelectedOption] = useState([]);
     const [path, setPath] = useState("");
 
-    const handleChangeOption = (e) => {
-        setSelectedOption(e.target.value);
+    const handleOptionChange = (e) => {
+        const {name, value} = e.target;
+        const newSelectedOption = {name, value}; 
+        let index = selectedOption.findIndex(item => item.name === name);
+        if(index < 0){
+            setSelectedOption([...selectedOption, newSelectedOption]);
+        }else{
+            //replace existing name: value pair with newly selected pair
+            let updatedOption = selectedOption.filter(option => option.name !== name );
+            updatedOption.push(newSelectedOption)
+            setSelectedOption(updatedOption);
+        }
     }
+    
+    useEffect(() => {
+        console.log(selectedOption);
+    })
+    
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-
-        console.log("you have selected" + selectedOption);
-    }
 
     return(
         <div>
@@ -56,27 +67,23 @@ export const PrimaryOneTestPage = () => {
             <ol>
                 { testQuestions.map(testQuestion => ( 
                     <li>
-                        <TestQuestions question={testQuestion.question} />
-                        <form onSubmit={handleFormSubmit}>
-                            <ul>
+                        <TestQuestions question={testQuestion.question} />                        
+                        <div onChange={handleOptionChange}>
+                            <ul >
                                 {testQuestion.options.map( option => (
-                                    <li>
+                                    <li id={testQuestion.question}>
                                         <TestQuestionOptions 
                                             optionValue={option} 
                                             name={testQuestion.question}
-                                            checked={setSelectedOption(selectedOption === option)}
-                                            onChange={handleChangeOption} 
                                             />
                                     </li>
                                 ))}
                             </ul>
-                        </form>
+                        </div>
                     </li>
                 ))}
-            </ol>
-            <Link to={path}>            
-                <Button type='submit'>Proceed &rarr;</Button>
-            </Link>
+            </ol>           
+            <Button>Proceed &rarr;</Button>
         </div>
         
     );
