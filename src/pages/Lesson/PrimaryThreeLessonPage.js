@@ -36,11 +36,11 @@ const lesson = [
     }
 ]
 
-export const PrimaryTwoLessonPage = () => {   
+export const PrimaryThreeLessonPage = () => {   
 
     const [ assessmentScore, setAssessmentScore ] = useState(0);
 
     return(
-        <div>Primary Two Lesson Page</div>
+        <div>Primary Three Lesson Page</div>
     );
 };

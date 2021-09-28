@@ -1,5 +1,5 @@
-export const Button = ({children, type}) => {
+export const Button = ({children, handleSubmit}) => {
     return(
-        <button type={type}>{children}</button>
+        <input type="button" value={children}  onClick={handleSubmit} />
     );
 };
