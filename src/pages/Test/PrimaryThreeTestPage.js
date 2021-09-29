@@ -103,13 +103,15 @@ export const PrimaryThreeTestPage = () => {
             <h3>Primary 3</h3>
             <ol>
                 { testQuestions.map(testQuestion => ( 
-                    <li id={testQuestion.id}>
+                    <li key={testQuestion.id + 1}>
                         <TestQuestions question={testQuestion.question} />
                         <div onChange={handleOptionChange}>
                             <ul>
                                 {testQuestion.options.map( option => (
-                                    <li id={testQuestion.id}>
-                                        <TestQuestionOptions optionValue={option}  name={testQuestion.question} />
+                                    <li key={testQuestion.id}>
+                                        <TestQuestionOptions 
+                                            optionValue={option}  
+                                            name={testQuestion.question} />
                                     </li>
                                 ))}
                             </ul>

@@ -1,11 +1,10 @@
-export const TestQuestionOptions = ({optionValue, name, checked}) => {
+export const TestQuestionOptions = ({optionValue, name }) => {
     return(
         <div>
             <input 
                 type="radio" 
                 value={optionValue} 
-                name={name}
-                checked={checked}  />
+                name={name} />
                 
             <label htmlFor="selectOption">{optionValue}</label>
         </div>

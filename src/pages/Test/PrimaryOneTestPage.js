@@ -96,7 +96,7 @@ export const PrimaryOneTestPage = () => {
             }
         }
        
-    }, [history, cutOffMark, testScore])
+    }, [history, cutOffMark, testScore]);
     
 
 
@@ -105,12 +105,12 @@ export const PrimaryOneTestPage = () => {
             <h3>Primary 1</h3>
             <ol>
                 { testQuestions.map(testQuestion => ( 
-                    <li id={testQuestion.id}>
+                    <li key={testQuestion.id + 1}>
                         <TestQuestions question={testQuestion.question} />                        
                         <div onChange={handleOptionChange}>
                             <ul >
                                 {testQuestion.options.map( option => (
-                                    <li id={testQuestion.question}>
+                                    <li key={testQuestion.question}>
                                         <TestQuestionOptions 
                                             optionValue={option} 
                                             name={testQuestion.question}
