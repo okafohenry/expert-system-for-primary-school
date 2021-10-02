@@ -1,12 +1,22 @@
-export const TestQuestionOptions = ({optionValue, name }) => {
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    position: relative;
+    right: 45px;
+`
+
+export const TestQuestionOptions = ({optionValue, name, checked }) => {
     return(
-        <div>
-            <input 
-                type="radio" 
-                value={optionValue} 
-                name={name} />
-                
-            <label htmlFor="selectOption">{optionValue}</label>
-        </div>
+        <Wrapper>
+            <div>
+                <input 
+                    type="radio" 
+                    value={optionValue} 
+                    name={name}
+                    checked={checked} />
+                    
+                <label htmlFor="selectOption">{optionValue}</label>
+            </div>
+        </Wrapper>
     );
 };

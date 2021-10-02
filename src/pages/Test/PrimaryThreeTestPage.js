@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from "react";
-import { TestQuestionOptions, TestQuestions, Button } from "../../components";
+import { TestQuestionOptions, TestQuestions, Button, AppLayout } from "../../components";
 import { useHistory } from "react-router-dom";
 
 const testQuestions = [
@@ -99,7 +99,7 @@ export const PrimaryThreeTestPage = () => {
     
 
     return(
-        <div>
+        <AppLayout>
             <h3>Primary 3</h3>
             <ol>
                 { testQuestions.map(testQuestion => ( 
@@ -120,6 +120,6 @@ export const PrimaryThreeTestPage = () => {
                 ))}
             </ol>
             <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
-        </div>
+        </AppLayout>
     );
 };

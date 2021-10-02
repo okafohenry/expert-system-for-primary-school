@@ -1,5 +1,5 @@
 import {useEffect, useState, useRef} from "react";
-import { TestQuestionOptions, TestQuestions, Button } from "../../components";
+import { TestQuestionOptions, TestQuestions, Button, AppLayout } from "../../components";
 import { useHistory } from "react-router-dom";
 
 const testQuestions = [
@@ -92,7 +92,7 @@ export const PrimaryOneTestPage = () => {
             if(testScore >= cutOffMark){
                 history.push('/tests/primary-two');
             }else{
-                history.push('/lessons/primary-one');
+                history.push('/lessons/primary-one/lesson-one');
             }
         }
        
@@ -101,7 +101,7 @@ export const PrimaryOneTestPage = () => {
 
 
     return(
-        <div>
+        <AppLayout>
             <h3>Primary 1</h3>
             <ol>
                 { testQuestions.map(testQuestion => ( 
@@ -123,7 +123,7 @@ export const PrimaryOneTestPage = () => {
                 ))}
             </ol>           
             <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
-        </div>
+        </AppLayout>
         
     );
 };
