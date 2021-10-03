@@ -5,10 +5,11 @@ const Wrapper = styled.div`
 
     .container{
         height: 500px;
-        width: 60%;
+        width: 50%;
         padding: 30px;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 80px;
         overflow: scroll;
 
         font-size: 16px;

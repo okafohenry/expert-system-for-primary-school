@@ -3,18 +3,22 @@ import {Link} from 'react-router-dom';
 import { HomeIcon, About } from '.';
 
 const Wrapper = styled.nav`
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin-top: 0;
     background: #fff;
-    padding: 5px 0;
+    box-shadow: 10px 0px 20px 0px #ebe8e8;
 
     ul{
         display: inline-flex;
 
         li{
             padding: 5px;
-            background: red;
         }
+    }
+    .logo {
+        margin-left: 50px;
+        padding: 0;
     }
 `
 
@@ -23,8 +27,14 @@ export const Nav = () => {
         <Wrapper>
             <nav>
                 <ul className="navList">
-                    <li>
-                        <Link to="/"><img src="" alt="logo" /></Link>
+                    <li className="logo">
+                        <Link to="/">
+                            <img 
+                                src={process.env.PUBLIC_URL + '/images/logo1.png'} 
+                                alt="logo" 
+                                height="50px"
+                                width="65px"/>
+                        </Link>
                     </li>
                     <li>
                         <Link to="/"><HomeIcon /></Link>

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {FaGithub, FaTwitter, FaLinkedin} from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 
 const Wrapper = styled.footer`
     position: fixed;
@@ -14,9 +16,13 @@ const Wrapper = styled.footer`
 
         li{
             display: inline;
-            padding: 0 10px
+            padding: 0 10px;
+        }
+        .git, .linkedin, .twitter{
+            color: #ababab;
         }
     }
+
 `
 
 export const Footer = () => {
@@ -24,9 +30,21 @@ export const Footer = () => {
         <Wrapper>
             <footer>
                 <ul>
-                    <li>git{/* git icon */}</li>
-                    <li>linkedIn{/* linkedIn Icon*/}</li>
-                    <li>Twitter{/* Twitter icon */}</li>
+                    <li>
+                        <Link to="github.com/okafohenry/expert-system-for-primary-school">
+                            <FaGithub className="git" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="linkedin.com/in/henry-okafor-854112112">
+                            <FaLinkedin className="linkedin" />
+                        </Link>
+                    </li>
+                    <li> 
+                        <Link to="twitter.com/_okafohenrie">
+                            <FaTwitter className="twitter" />
+                        </Link>
+                    </li>
                 </ul>
             </footer>
         </Wrapper>   

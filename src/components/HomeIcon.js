@@ -5,9 +5,10 @@ import {FaHome} from 'react-icons/fa';
 const Wrapper = styled.span`
     .home{        
         position: absolute;
-        right: 250px;
-        border-bottom: 3px solid red;
-        padding: 12px;
+        right: 300px;
+        padding: 15px;
+        font-size: 24px;
+        color: #B57336;
     }
 ` 
 
