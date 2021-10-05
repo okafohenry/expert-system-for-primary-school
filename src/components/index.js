@@ -8,4 +8,3 @@ export * from './AppLayout';
 export * from './HomeIcon';
 export * from './About';
 export *  from './Logo';
-export * from './Popup';

@@ -23,7 +23,7 @@ export const PrimaryOneAdvance = () => {
     return(
         <Wrapper>
             <div className="img-txt">
-                <img src={process.env.PUBLIC_URL + '/images/trophy.gif'}/>
+                <img src={process.env.PUBLIC_URL + '/images/trophy.gif'} alt="trophy"/>
                 <h4>Well done Champ!</h4>
                 <p></p>
             </div>

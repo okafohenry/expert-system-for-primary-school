@@ -4,7 +4,6 @@ import {
         PrimaryOneTestPage, 
         PrimaryTwoTestPage, 
         PrimaryThreeTestPage,
-        PrimaryFourTestPage,
         LandingPage,
         PrimaryOneLessonPage,
         PrimaryTwoLessonPage,
@@ -23,7 +22,6 @@ const Mathutor = () => {
           <Route path='/tests/primary-one' component={PrimaryOneTestPage} />
           <Route path='/tests/primary-two' component={PrimaryTwoTestPage} />
           <Route path='/tests/primary-three' component={PrimaryThreeTestPage} />
-          <Route path='/tests/primary-four' component={PrimaryFourTestPage} />
 
           <Route path="/lessons/primary-one" component={PrimaryOneLessonPage} />
           <Route path="/lessons/primary-two" component={PrimaryTwoLessonPage} />

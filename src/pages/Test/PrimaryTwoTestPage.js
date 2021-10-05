@@ -91,7 +91,7 @@ export const PrimaryTwoTestPage = () => {
             if(testScore >= cutOffMark){
                 history.push('/tests/primary-three');
             }else{
-                history.push('/lessons/primary-two');
+                history.push('/lessons/primary-two/lesson-one');
             }
         }
        
