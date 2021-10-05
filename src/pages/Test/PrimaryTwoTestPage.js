@@ -1,6 +1,8 @@
 import {useState, useEffect, useRef} from "react";
 import { TestQuestionOptions, TestQuestions, Button, AppLayout } from "../../components";
 import { useHistory } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const testQuestions = [
     {
@@ -89,8 +91,10 @@ export const PrimaryTwoTestPage = () => {
             initialMount.current = false;
         }else{
             if(testScore >= cutOffMark){
+                toast.success("Onward champ! too good for primary 2");
                 history.push('/tests/primary-three');
             }else{
+                toast.error(`You scored ${testScore}/${cutOffMark}, below the pass mark`)
                 history.push('/lessons/primary-two/lesson-one');
             }
         }
@@ -100,7 +104,7 @@ export const PrimaryTwoTestPage = () => {
 
     return(
         <AppLayout>
-            <h3>Primary 2</h3>
+            <h2>Primary 2</h2>
             <ol>
                 { testQuestions.map(testQuestion => ( 
                     <li key={testQuestion.id + 1}>
@@ -120,6 +124,7 @@ export const PrimaryTwoTestPage = () => {
                 ))}
             </ol>
             <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
+            <ToastContainer position="top-center" autoClose={3000} />
         </AppLayout>
     );
 };

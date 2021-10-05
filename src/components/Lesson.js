@@ -10,6 +10,10 @@ const Wrapper = styled.div`
     width: 70%;
     gap: 150px;
 
+    h2{
+        color: #B57336;
+    }
+
     .nextlesson{
         margin-left: 30px;
     }
@@ -85,7 +89,7 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
 
    return(
     <div>        
-        <h2>{`${pupilClass} Lesson Page `}</h2>
+        <h2 className="class">{`${pupilClass} Lesson Page `}</h2>
         <h3>{data.topic}</h3>
         <p>{data.text}</p>
         <img src={data.image} alt={`${data.topic}`} />
@@ -113,7 +117,8 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
         <Wrapper>
             <Button handleSubmit={handleClick}>Submit</Button>
             <Button 
-                handleSubmit={handleProceed} 
+                handleSubmit={handleProceed}
+                primary
                 disabled={btnState}
                 className="nextlesson">Next lesson &rarr;</Button>
         </Wrapper>
