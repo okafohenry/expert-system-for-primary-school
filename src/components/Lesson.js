@@ -1,6 +1,17 @@
 import {useState, useRef, useEffect} from 'react';
-import { Button, TestQuestions, TestQuestionOptions } from ".";
+import { Button, TestQuestions, TestQuestionOptions, Popup } from ".";
 import { useHistory } from 'react-router';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    display: inline-flex;
+    width: 70%;
+    gap: 150px;
+
+    .nextlesson{
+        margin-left: 30px;
+    }
+`
 
 export const Lesson = ({data, nextpath, pupilClass}) => {
     const history = useHistory();
@@ -8,7 +19,10 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
     const [ assessmentScore, setAssessmentScore ] = useState(0);
     const [proceedBtn, setProceedBtn] = useState({ index: 0});
     const [btnState, setBtnState] = useState(true)
-    //const [lessonPath, setLessonPath] = useState([path])
+    const [popup, setPopup] = useState({
+        status: false,
+        type: "success"
+    })
 
     const handleOptionChange = (e) => {
         const {name, value} = e.target;
@@ -54,12 +68,18 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
             initialMount.current = false;
         }else{
             if(assessmentScore === cutOffMark){
-                alert("success!", assessmentScore);
+                setPopup({
+                    status: true,
+                    type: "success"
+                });
                 setBtnState(false);
                 //history.push('/lessons/primary-two');
                 //setTopicIndex(indexCounter);
             }else{                
-                alert("try again!",assessmentScore)
+                setPopup({
+                    status: true,
+                    type: "failure"
+                })
                 window.scrollTo(0,0);
             }                
             setSelectedOption([]);      
@@ -70,6 +90,18 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
     const handleProceed = () => {
         if(assessmentScore === cutOffMark){
             history.push(nextpath);
+        }
+    }
+
+    const handlePopup = () => {
+        if(popup.status === true && popup.type === "success"){
+            setTimeout(() => {
+                <Popup title="Success" body="Nice Work, keep it up!" className="success" />
+            }, 2000);
+        }else if(popup.status === true && popup.type === "failure"){
+            setTimeout(() => {
+                <Popup title="failed" body="Almost there, try again!" className="failed" />
+            }, 2000);
         }
     }
 
@@ -101,8 +133,14 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
                 ))}
             </ol>
         </div> 
-        <Button handleSubmit={handleClick}>Submit</Button>
-        <Button handleSubmit={handleProceed} disabled={btnState}>next lesson &rarr;</Button>
+        <Wrapper>
+            <Button handleSubmit={handleClick}>Submit</Button>
+            <Button 
+                handleSubmit={handleProceed} 
+                disabled={btnState}
+                className="nextlesson">Next lesson &rarr;</Button>
+        </Wrapper>
+        <span>{ handlePopup() }</span>
     </div>
    ) ;
 };

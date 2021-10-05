@@ -5,9 +5,12 @@ const Wrapper = styled.span`
     .about{        
         position: absolute;
         right: 100px;
-        border-bottom: 3px solid #B57336;
         padding: 23px 12px;
         color: #B57336;
+        transition: .1s ease-in-out;
+    }
+    .about:hover {
+        border-bottom: 3px solid #B57336;
     }
 `
 

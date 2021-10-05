@@ -11,6 +11,7 @@ export const TestQuestionOptions = ({optionValue, name, checked }) => {
             <div>
                 <input 
                     type="radio" 
+                    id="selectOption"
                     value={optionValue} 
                     name={name}
                     checked={checked} />

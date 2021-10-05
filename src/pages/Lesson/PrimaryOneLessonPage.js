@@ -95,7 +95,7 @@ export const PrimaryOneLessonPage = () => {
                     <Lesson 
                         pupilClass={tutorClass} 
                         data={scheme[2]} 
-                        nextpath={"/lessons/primary-two/lesson-one"}/>
+                        nextpath={`/advance-to-two` }/> {/*/lessons/primary-two/lesson-one*/}
                 </Route>        
             </Switch> 
         </AppLayout>

@@ -5,8 +5,9 @@ import {Link} from 'react-router-dom';
 const Wrapper = styled.footer`
     position: fixed;
     bottom: 0;
-    padding: 3px 0;
+    padding: 0;
     width: 100%;
+    background: #fff;
 
     ul{
         width: 16%;

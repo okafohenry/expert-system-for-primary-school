@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import { HomeIcon, About } from '.';
+import { HomeIcon, About, Logo } from '.';
 
 const Wrapper = styled.nav`
     position: fixed;
@@ -8,6 +8,7 @@ const Wrapper = styled.nav`
     width: 100%;
     background: #fff;
     box-shadow: 10px 0px 20px 0px #ebe8e8;
+    z-index: 10;
 
     ul{
         display: inline-flex;
@@ -29,11 +30,7 @@ export const Nav = () => {
                 <ul className="navList">
                     <li className="logo">
                         <Link to="/">
-                            <img 
-                                src={process.env.PUBLIC_URL + '/images/logo1.png'} 
-                                alt="logo" 
-                                height="50px"
-                                width="65px"/>
+                            <Logo />
                         </Link>
                     </li>
                     <li>

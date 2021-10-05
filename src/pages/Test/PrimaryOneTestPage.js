@@ -122,7 +122,7 @@ export const PrimaryOneTestPage = () => {
                     </li>
                 ))}
             </ol>           
-            <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
+            <Button handleSubmit={handleSubmit} className="invert">Proceed &nbsp;&rarr;</Button>
         </AppLayout>
         
     );

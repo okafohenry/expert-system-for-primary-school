@@ -8,7 +8,11 @@ import {
         LandingPage,
         PrimaryOneLessonPage,
         PrimaryTwoLessonPage,
-        PrimaryThreeLessonPage
+        PrimaryThreeLessonPage,
+        ErrorPage,
+        PrimaryOneAdvance,
+        PrimaryTwoAdvance,
+        PrimaryThreeAdvance
       } from './pages';
 
 const Mathutor = () => {  
@@ -24,6 +28,12 @@ const Mathutor = () => {
           <Route path="/lessons/primary-one" component={PrimaryOneLessonPage} />
           <Route path="/lessons/primary-two" component={PrimaryTwoLessonPage} />
           <Route path="/lessons/primary-three" component={PrimaryThreeLessonPage} />
+
+          <Route path="/advance-to-two" component={PrimaryOneAdvance} />
+          <Route path="/advance-to-three" component={PrimaryTwoAdvance} />
+          <Route path="/advance-to-four" component={PrimaryThreeAdvance} />
+
+          <Route path='*' exact={true} component={ErrorPage} />
         </Switch>
       </div>
     );
