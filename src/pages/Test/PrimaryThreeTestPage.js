@@ -7,33 +7,33 @@ import 'react-toastify/dist/ReactToastify.css';
 const testQuestions = [
     {
         id: 1,
-        question: "Question 10",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 1"
+        question: "What is the name of this symbol < ?",
+        options: ["greater than", "less than", "equal to" ],
+        answer:  "less than"
     },
     {
         id: 2,
-        question: "Question 11",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 2"
+        question: "Write 600 is greater than 400 in symbol",
+        options: ["600 < 400", "600 = 400", "600 > 400" ],
+        answer:  "600 > 400"
     },
     {
         id: 3,
-        question: "Question 13",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 3"
+        question: "Maria had 53 marbles when she started, she lost 15 marbles. How many does she have left?",
+        options: ["49", "38", "80" ],
+        answer:  "38"
     },
     {
         id: 4,
-        question: "Question 2",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 1"
+        question: "Bolaji collected 610 newspapers for recycling, David collected 241 newspaper. How many newspaper were collected together?",
+        options: ["851", "900", "2020" ],
+        answer:  "851"
     },
     {
         id: 5,
-        question: "Question 3",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 3"
+        question: "What is 3/4 of 56?",
+        options: ["42", "40", "36" ],
+        answer:  "42"
     }
 ];
 

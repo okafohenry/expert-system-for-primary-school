@@ -7,33 +7,33 @@ import 'react-toastify/dist/ReactToastify.css';
 const testQuestions = [
     {
         id: 1,
-        question: "Question 1",
-        options: ["option 1", "option 2", "option 3" ],
-        answer: "option 1"
+        question: "Zero means _____",
+        options: ["Nothing", "Everything", "Ten" ],
+        answer: "Nothing"
     },
     {
         id: 2,
-        question: "Question 2",
-        options: ["option 4", "option 5", "option 6" ],
-        answer:  "option 5"
+        question: "Triangle has how many sides?",
+        options: ["5", "4", "3" ],
+        answer:  "3"
     },
     {
         id: 3,
-        question: "Question 3",
-        options: ["option 7", "option 8", "option 9" ],
-        answer: "option 9"
+        question: "4 x 3 = ____",
+        options: ["13", "12", "14" ],
+        answer: "12"
     },
     {
         id: 4,
-        question: "Question 4",
-        options: ["option 10", "option 11", "option 12" ],
-        answer:  "option 10"
+        question: "17 take away 7 = _____",
+        options: ["10", "11", "24" ],
+        answer:  "10"
     },
     {
         id: 5,
-        question: "Question 5",
-        options: ["option 13", "option 14", "option 15" ],
-        answer:  "option 14"
+        question: "Write 13 in words ______",
+        options: ["Twelve", "Eleven", "Thirteen" ],
+        answer:  "Thirteen"
     }
 ];
 

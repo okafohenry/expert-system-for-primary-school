@@ -7,33 +7,33 @@ import 'react-toastify/dist/ReactToastify.css';
 const testQuestions = [
     {
         id: 1,
-        question: "Question 10",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 1"
+        question: "During the weekend, Mr. Femi's family ate 12 mangoes on Friday, 10 mangoes on Saturday and 13 mangoes on Sunday. How many mangoes did Mr. Femi's family during the weekend?",
+        options: ["33", "35", "34" ],
+        answer:  "35"
     },
     {
         id: 2,
-        question: "Question 11",
-        options: ["option 1", "option 2", "option 3" ],
-        answer: "option 2"
+        question: "How many sides does a cube of sugar have ?",
+        options: ["5", "6", "7" ],
+        answer: "6"
     },
     {
         id: 3,
-        question: "Question 13",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 3"
+        question: "Ifeoma scored 60 percent in Mathematics, 34 percent in English Language and 53 percent in Social Studies. Find the total sum of her scores in the three subjects",
+        options: ["168", "203", "147" ],
+        answer:  "147"
     },
     {
         id: 4,
-        question: "Question 2",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 1"
+        question: "13, 2, 2, 11, 3, 7, 9, 5, 2, 6, 6, 8, 4, 4, 7. From the numbers, how many odd numbers are there?",
+        options: ["5", "6", "7" ],
+        answer:  "7"
     },
     {
         id: 5,
-        question: "Question 3",
-        options: ["option 1", "option 2", "option 3" ],
-        answer:  "option 2"
+        question: "A boy is carrying 30 eggs. If 18 eggs break, how many eegs are left unbroken?",
+        options: ["12", "10", "11" ],
+        answer:  "12"
     }
 ];
 
@@ -94,7 +94,7 @@ export const PrimaryTwoTestPage = () => {
                 toast.success("Onward champ! too good for primary 2");
                 history.push('/tests/primary-three');
             }else{
-                toast.error(`You scored ${testScore}/${cutOffMark}, below the pass mark`)
+                toast.error(`You scored ${testScore}/${cutOffMark}, below the pass mark`);
                 history.push('/lessons/primary-two/lesson-one');
             }
         }
