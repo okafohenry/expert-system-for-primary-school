@@ -7,8 +7,10 @@ const scheme = [
     {
         id: 1,
         topic: "",
-        text: "",
+        text1: "",
         img: "",
+        text2: "",
+        text3: "",
         assessment: [
             {
                 id: 31,
@@ -33,7 +35,7 @@ const scheme = [
     },
     {
         id: 2,
-        topic: "",
+        topic: "Subtraction of Two-Digit Numbers",
         text: "",
         img: "",
         assessment: [
@@ -59,7 +61,7 @@ const scheme = [
     },
     {
         id: 3,
-        topic: "",
+        topic: "Identification of Shapes ",
         text: "",
         img: "",
         assessment: [{

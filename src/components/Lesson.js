@@ -10,13 +10,27 @@ const Wrapper = styled.div`
     width: 70%;
     gap: 150px;
 
-    h2{
-        color: #B57336;
-    }
-
+    
     .nextlesson{
         margin-left: 30px;
     }
+`
+
+const Container = styled.div`
+    line-height: 2rem;
+
+
+    h1, h2{
+        color: #B57336;
+    }
+    h1 {
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .assessment-title{
+        padding: 20px 5px;
+    }
+
 `
 
 export const Lesson = ({data, nextpath, pupilClass}) => {
@@ -44,9 +58,8 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
         let counter = 0;
         
         if(selectedOption.length < 3){
-            console.log("not upto 3");
+            toast.error("Attempt all the questions before submitting");
         }else{
-            console.log("let's go!");
             for(let i=0; i<data.assessment.length; i++){
                 for(let j=0; j<selectedOption.length; j++){
                     if(data.assessment[i].question === selectedOption[j].name){
@@ -69,11 +82,15 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
             initialMount.current = false;
         }else{
             if(assessmentScore === cutOffMark){
-                toast.success("Passed in flying colors, keep it up!");
+                toast.success("Passed in flying colors, proceed!");
                 setBtnState(false);
-            }else{            
-                toast.error("So close! try again champ");
-                window.scrollTo(0,0);
+            }else{  
+                toast.error("So close! try again champ");       
+                
+                setTimeout(() => {
+                    window.location.reload();
+                    window.scrollTo(0,0);   
+                }, 4800 );
             }                
             setSelectedOption([]);      
         }
@@ -83,35 +100,38 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
     const handleProceed = () => {
         if(assessmentScore === cutOffMark){
             history.push(nextpath);
+            window.location.reload();
         }
     }
 
 
    return(
-    <div>        
-        <h2 className="class">{`${pupilClass} Lesson Page `}</h2>
-        <h3>{data.topic}</h3>
-        <p>{data.text}</p>
-        <img src={data.image} alt={`${data.topic}`} />
+    <Container>        
+        <h1 className="class">{`${pupilClass} Lesson Page `}</h1>
+        <h2>{data.topic}</h2>
+        <p>{data.text1}</p>
+        <img src={data.img} alt={`${data.topic}`} height="400px" width="500px"/>
+        <p>{data.text2}</p>
+        <p>{data.text3}</p>
         <div>
-            <h3>Assessment</h3>
+            <h2 className="assessment-title">Assessment</h2>
             <ol>
-                {data.assessment.map(item => ( 
-                    <li key={item.id}>
-                        <TestQuestions question={item.question} />
-                        <div onChange={handleOptionChange}>
-                            <ul>
-                                {item.options.map(option => (
-                                    <li key={item.id}>
-                                        <TestQuestionOptions 
-                                            optionValue={option}  
-                                            name={item.question} />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
-                ))}
+            {data.assessment.map(item => ( 
+                        <li key={item.id}>
+                            <TestQuestions question={item.question} />
+                            <div onChange={handleOptionChange}>
+                                <ul>
+                                    {item.options.map(option => (
+                                        <li key={item.id}>
+                                            <TestQuestionOptions 
+                                                optionValue={option}  
+                                                name={item.question} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
             </ol>
         </div> 
         <Wrapper>
@@ -122,7 +142,7 @@ export const Lesson = ({data, nextpath, pupilClass}) => {
                 disabled={btnState}
                 className="nextlesson">Next lesson &rarr;</Button>
         </Wrapper>
-        <ToastContainer position="top-center" autoClose={3000} />
-    </div>
+        <ToastContainer position="top-center" autoClose={5000} />
+    </Container>
    ) ;
 };
