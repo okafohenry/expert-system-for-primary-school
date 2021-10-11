@@ -6,7 +6,7 @@ const scheme = [
     {
         id: 1,
         topic: "Whole Numbers ( 1- 10 )",
-        text1: "In mathematics, whole numbers are the basic counting numbers 0, 1, 2, 3, 4, 5, 6, … and so on. Whole numbers can continue until infinity, or without end.",
+        text1: "In mathematics, whole numbers are the basic counting numbers nn0, 1, 2, 3, 4, 5, 6, … and so on. Whole numbers can continue until infinity, or without end.",
         img: "https://res.cloudinary.com/okafohenrie/image/upload/v1633763911/1547180043_Whole-Numbers-0-1-2-3-4_twd5b1.png",
         text2: "Whole numbers include positive numbers along with 0, Whole numbers cannot be negative. Also, a whole number cannot be a fraction",
         assessment: [

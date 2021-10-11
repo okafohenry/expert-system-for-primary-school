@@ -114,7 +114,7 @@ export const PrimaryTwoTestPage = () => {
     return(
         <AppLayout>
             <Container>
-                <h2>Primary 2</h2>
+                <h2>Primary 2 Test</h2>
                 <ol>
                     { testQuestions.map(testQuestion => ( 
                         <li key={testQuestion.id + 1}>

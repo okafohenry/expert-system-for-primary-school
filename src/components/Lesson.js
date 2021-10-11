@@ -20,9 +20,7 @@ const Container = styled.div`
     line-height: 2rem;
 
 
-    h1, h2{
-        color: #B57336;
-    }
+    
     h1 {
         padding-bottom: 30px;
         text-align: center;
