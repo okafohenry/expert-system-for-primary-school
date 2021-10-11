@@ -24,7 +24,7 @@ const Container = styled.div`
         color: #B57336;
     }
     h1 {
-        padding-bottom: 50px;
+        padding-bottom: 30px;
         text-align: center;
     }
     .assessment-title{

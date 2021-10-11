@@ -3,6 +3,15 @@ import { TestQuestionOptions, TestQuestions, Button, AppLayout } from "../../com
 import { useHistory } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    h2{
+       text-align: center;
+       padding-bottom: 20px; 
+       font-size: 25px;
+    }
+`
 
 const testQuestions = [
     {
@@ -104,27 +113,29 @@ export const PrimaryTwoTestPage = () => {
 
     return(
         <AppLayout>
-            <h2>Primary 2</h2>
-            <ol>
-                { testQuestions.map(testQuestion => ( 
-                    <li key={testQuestion.id + 1}>
-                        <TestQuestions question={testQuestion.question} />
-                        <div onChange={handleOptionChange}>
-                            <ul>
-                                {testQuestion.options.map( option => (
-                                    <li key={testQuestion.id}>
-                                        <TestQuestionOptions 
-                                            optionValue={option}  
-                                            name={testQuestion.question} />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
-                ))}
-            </ol>
-            <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
-            <ToastContainer position="top-center" autoClose={3000} />
+            <Container>
+                <h2>Primary 2</h2>
+                <ol>
+                    { testQuestions.map(testQuestion => ( 
+                        <li key={testQuestion.id + 1}>
+                            <TestQuestions question={testQuestion.question} />
+                            <div onChange={handleOptionChange}>
+                                <ul>
+                                    {testQuestion.options.map( option => (
+                                        <li key={testQuestion.id}>
+                                            <TestQuestionOptions 
+                                                optionValue={option}  
+                                                name={testQuestion.question} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
+                <Button handleSubmit={handleSubmit}>Proceed &rarr;</Button>
+                <ToastContainer position="top-center" autoClose={3000} />
+            </Container>
         </AppLayout>
     );
 };

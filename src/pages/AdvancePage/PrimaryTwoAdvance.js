@@ -33,7 +33,7 @@ export const PrimaryTwoAdvance = () => {
                     <Button className="btn1">start again</Button>
                 </Link>
                 <Link to="/lessons/primary-three/lesson-one">
-                    <Button className="btn2" disabled={true}>Advance to Next class &rarr;</Button>
+                    <Button className="btn2">Advance to Next class &rarr;</Button>
                 </Link>
             </div>
         </Wrapper>

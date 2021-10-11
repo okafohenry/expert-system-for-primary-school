@@ -3,6 +3,15 @@ import { TestQuestionOptions, TestQuestions, Button, AppLayout } from "../../com
 import { useHistory } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    h2{
+       text-align: center;
+       padding-bottom: 20px; 
+       font-size: 25px;
+    }
+`
 
 const testQuestions = [
     {
@@ -106,28 +115,30 @@ export const PrimaryOneTestPage = () => {
 
     return(
         <AppLayout>
-            <h2>Primary 1</h2>
-            <ol>
-                { testQuestions.map(testQuestion => ( 
-                    <li key={testQuestion.id + 1}>
-                        <TestQuestions question={testQuestion.question} />                        
-                        <div onChange={handleOptionChange}>
-                            <ul >
-                                {testQuestion.options.map( option => (
-                                    <li key={testQuestion.question}>
-                                        <TestQuestionOptions 
-                                            optionValue={option} 
-                                            name={testQuestion.question}
-                                            />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </li>
-                ))}
-            </ol>           
-            <Button handleSubmit={handleSubmit} className="invert">Proceed &nbsp;&rarr;</Button>
-            <ToastContainer position="top-center" autoClose={3000} />
+            <Container>
+                <ToastContainer position="top-center" autoClose={3000} />
+                <h2>Primary 1 Test</h2>
+                <ol>
+                    { testQuestions.map(testQuestion => ( 
+                        <li key={testQuestion.id + 1}>
+                            <TestQuestions question={testQuestion.question} />                        
+                            <div onChange={handleOptionChange}>
+                                <ul >
+                                    {testQuestion.options.map( option => (
+                                        <li key={testQuestion.question}>
+                                            <TestQuestionOptions 
+                                                optionValue={option} 
+                                                name={testQuestion.question}
+                                                />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
+                </ol>           
+                <Button handleSubmit={handleSubmit} className="invert">Proceed &nbsp;&rarr;</Button>
+            </Container>
         </AppLayout>
         
     );
